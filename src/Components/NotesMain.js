@@ -5,13 +5,11 @@ import NotesItem from './NotesItem';
 const NotesMain = () => {
 
 
-    const { notes, setNotes } = useContext(NoteContext);
+    const { notes, setNotes,mode ,toggleMode } = useContext(NoteContext);
     return (
 
         <div className='row my-3 '>
-
-
-            <h3>Your Note</h3>
+            <h3 className ={`text-${mode === "light"? 'black':'white'} m-4 ` }>Your Note</h3>
             {notes.map((ele) => {
                 return <NotesItem key={ele.id} usingProps={ele} />
 

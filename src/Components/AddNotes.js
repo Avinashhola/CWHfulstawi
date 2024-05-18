@@ -4,14 +4,13 @@ import NoteContext from '../Contexts/Notes/NoteContext'
 const AddNotes = () => {
 
 const b= useContext(NoteContext)
-const {addNote}  = b 
+const {addNote, mode, toggleMode}  = b 
 
 const [firstAdd, setfirstAdd] = useState({title:"", description:"", tag:"default"})
 
 const onChange=(e)=>{
     setfirstAdd({...firstAdd, [e.target.name]:e.target.value})
 }
-
 const addOverClick=(e)=>{
     e.preventDefault();
 
@@ -19,9 +18,9 @@ const addOverClick=(e)=>{
 }
     return (
         <>
-            <h2>Add a Note</h2>
+            <h2 className ={`text-${mode === "light"? 'black':'white'} m-4 ` }>Add a Note</h2>
 
-            <form className='shadow p-3 mb-5 bg-body rounded'>
+            <form className={`shadow p-3 mb-5  rounded bg-${mode === "light"? 'light':'899499'} text-${mode === "light"? 'black':'white'}`}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" onChange={onChange}/>

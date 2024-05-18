@@ -22,6 +22,7 @@ import AddNotes from './AddNotes';
 
 const Home = (props) => {
 
+  
   return (
     <div className='container my-3'>
       <AddNotes />

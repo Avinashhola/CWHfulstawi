@@ -56,14 +56,19 @@ import {
 } from "react-router-dom";
 
 import NoteState from './Contexts/Notes/NoteState';
+import LandingPage from './Components/LandingPage';
 function App() {
+
+
+
+
+  
   return (
       <NoteState>
         <Router>
-          <h1 className='text-center m-2'>This is avinash android notebuk</h1>
           <Navbar />
-
           <Routes>
+          <Route exact path="/" element={<LandingPage />} />
             <Route exact path="/Home" element={<Home />} />
             <Route exact path="/About" element={<About />} />
           </Routes>
